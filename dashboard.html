@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+    <section>
+    
+    <!-- Start of the first container for displaying username, accepting input and adding the tasks -->
+    <div class="add-box">
+        <h1 id="greeting"></h1>
+        <form  class = "add-task-form">
+            <input id = "new-task-input" type="text" placeholder="Type in the task">
+            <button class="add-task" type="submit">Create</button>
+        </form>
+    </div>
+    <!-- End of the first container -->
+
+    <!-- Start of the second container.This is where the tasks will be populated -->
+    <div class="list-box">
+        <h2>Tasks</h2>
+        <div id="tasks">
+        </div>
+    </div>
+    <!-- End of the second container -->
+
+</section>
+
+</body>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="firebase.js"></script>
+    <script src="todo.js" ></script>
+
+</html>

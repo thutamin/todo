@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Sign In & Sign Up</title>
+    
+</head>
+<body>
+    <section>
+    <div class="tab-form">
+        <!-- The tab form is made up of two container, the head tabs and the body that will be displayed according to the active tab head -->
+
+        <div class="add-box">
+            
+        <!-- Start of the first container for displaying 2 tabs -->
+        <div class="tab-heads">
+            <div class = "active">Sign Up</div>
+            <div>Login</div>
+        </div>
+        <!-- End of the tab heads -->
+
+        <!-- Start of the second container  -->
+        <div class="tab-body">
+
+            <div class="signup active">
+
+                    <h2>Create an account</h2>
+
+                    <div class="form-input">
+                        <input id = 'username' type="text" placeholder="Username">
+                    </div>
+
+                    <div class="form-input">
+                        <input id = "email" type="email" placeholder="Email">
+                    </div>
+
+                    <div class="form-input">
+                        <input id="password" type="password" placeholder="Password">
+                    </div>
+
+                    <div class="form-input">
+                        <button onclick="register()" >Signup</button>
+                    </div> 
+            </div>
+
+            <div class="login">
+
+                    <h2>Login Here</h2>
+
+                    <div class="form-input">
+                        <input id = "login-email" type="email" placeholder="Email">
+                    </div>
+
+                    <div class="form-input">
+                        <input id = "login-password" type="password" placeholder="Password">
+                    </div>
+
+                    <div class="form-input">
+                        <button onclick="login()" type="submit">Login</button>
+                    </div>
+
+            </div>
+         </div>
+         <!-- End of the Second Container -->
+         
+    </div>
+</section>
+    
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script  src="firebase.js" ></script>
+<script src="authenticate.js"></script>
+<script>
+    let tab = document.querySelector(".tab-form");
+    let tabHeader = tab.querySelector(".tab-heads");
+    let tabHeaderElements = tab.querySelectorAll(".tab-heads > div")
+    let tabBody = tab.querySelector(".tab-body")
+    let tabBodyElements = tab.querySelectorAll(".tab-body > div")
+
+
+    for(let i = 0; i < tabHeaderElements.length;i++){
+        tabHeaderElements[i].addEventListener("click",()=>{
+            tabHeader.querySelector(".active").classList.remove("active");
+            tabHeaderElements[i].classList.add("active");
+            tabBody.querySelector(".active").classList.remove("active");
+            tabBodyElements[i].classList.add("active");
+        
+    })
+}
+</script>
+
+</html>

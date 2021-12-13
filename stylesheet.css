@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    background: white;
+}
+
+section{
+    background: linear-gradient(-90deg, #ed5b3e, #ef326a, #23a6d5, #23a6d5);
+    background-size: 400% 400%;
+    position: relative;
+    animation: change 10s ease-in-out infinite;
+    width: 100%;
+    height: 100vh;
+}
+
+@keyframes change{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position:  100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+
+/* CSS for the index.html starts here */
+.tab-form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 95%;
+    max-width: 400px;
+    background: white;
+    
+}
+.tab-heads {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.tab-heads > div {
+    flex:1;
+    padding:15px;
+    text-align: center;
+    color: #555;
+    cursor: pointer;
+}
+
+.tab-heads > div.active {
+    color: white;
+    background: #ef326a;
+
+}
+
+.tab-body {
+    position: relative;
+    min-height: 360px;
+    overflow: hidden;
+}
+
+.tab-body > div {
+    position: absolute;
+    width: 100%;
+    top: -150vh;
+    opacity:0;
+    padding:5px 25px;
+    transition: opacity 300ms ease-in-out 0ms;
+}
+
+.tab-body > div.active{
+    top:0px;
+    opacity:1;
+    transition: opacity 300ms ease-in-out 0ms;
+}
+
+.tab-body > div h2 {
+    font-size: 25px;
+    color:#222;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.tab-body > div .form-input{
+    margin:10px 0px;
+    
+}
+
+.tab-body > div .form-input input{
+    width: 100%;
+    margin-top: 5px;
+    font-size: 20px;
+    padding:8px;
+}
+
+.tab-body > div .form-input button{
+    width: 100%;
+    margin-top: 5px ;
+    padding:10px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: grey;
+    color: white;
+    font-weight: bold;
+}
+
+/* End of the CSS for the index.html */
+
+
+
+
+
+
+/* CSS for the dashboard.html starts here */
+
+.add-box{
+    padding: 2rem 1rem;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+    align:center;
+}
+
+
+.add-box > h1{
+    color: white;
+    font-size: 50px;
+    margin: 20px 0px ;
+}
+
+.add-task-form{
+    display: flex;
+}
+
+#new-task-input{
+	border: none;
+	outline: none;
+	background: none;
+    flex: 1 1 0%;
+	background-color:white;
+	padding: 1rem;
+	border-radius: 1rem;
+	margin-right: 1rem;
+	color: black;
+	font-size: 1.25rem;
+
+}
+
+.add-task-form > button{
+
+    border-radius: 1rem;
+    border: none;
+	background: none;
+    color: white;
+	font-size: 1.25rem;
+	font-weight: bold;
+	cursor: pointer;
+
+}
+
+.list-box{
+    padding: 2rem 1rem;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.list-box > h2{
+    color: white;
+}
+
+#tasks .task{
+    border: none;
+	outline: none;
+	display: flex;
+	background-color:white;
+	padding: 1rem;
+	border-radius: 1rem;
+	margin-right: 1rem;
+    margin-top:10px;
+	color: black;
+	font-size: 1.25rem;
+}
+
+.task .task-content{
+    flex: 1 1 0%;
+
+}
+
+.task .task-content .text {
+    outline: none;
+    border:none;
+	color: black ;
+	font-size: 1.125rem;
+	width: 100%;
+	transition: 0.4s;
+}
+
+.task .actions{
+    display: flex;
+    margin: 0. -0.5rem
+}
+
+.task .actions button{
+    outline: none;
+    border:none;
+    margin:0.5rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: white;
+    color: #ef326a;
+    font-weight: bold;
+}
+
+.task .actions button:hover{
+    color: green;
+    
+}
+
+
+/* CSS for the dashboard.html starts here */
